@@ -1,0 +1,65 @@
+/* ตั้งค่าเริ่มต้น */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* เพิ่มพื้นหลังธีมป่า */
+    background-image: url('https://cdn.pixabay.com/photo/2020/12/23/14/41/forest-5855196_1280.jpg'); /* ใส่ URL ของภาพป่าที่คุณต้องการ */
+    background-size: cover; /* ปรับขนาดพื้นหลังให้เต็มหน้าจอ */
+    background-position: center; /* จัดตำแหน่งพื้นหลังให้อยู่กลาง */
+    background-attachment: fixed; /* ทำให้พื้นหลังไม่เลื่อนเมื่อเลื่อนหน้าเว็บ */
+}
+
+/* กำหนดรูปแบบของ header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5); /* เพิ่มความทึบใน header */
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* กำหนดการแสดงผลของเกม */
+#game {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* กำหนดการแสดงผลของ canvas (ที่ใช้สำหรับเกม Snake) */
+#snake-game {
+    background-color: #2e8b57; /* สีพื้นหลังของ canvas ที่ดูเหมือนสนามหญ้า */
+    border: 5px solid #fff; /* ขอบขาวรอบๆ Canvas */
+    border-radius: 10px;
+}
+
+/* ปรับการแสดงผล footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+/* สำหรับขนาดหน้าจอเล็ก (มือถือ) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    #snake-game {
+        width: 300px;
+        height: 300px;
+    }
+}

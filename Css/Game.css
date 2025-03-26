@@ -1,0 +1,96 @@
+/* ตั้งค่าเริ่มต้น */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: lightgray;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* กำหนดให้ navbar อยู่บนสุดและจัดรายการให้เรียงกัน */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ปรับปุ่มที่อยู่ใน header */
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* ทำให้เนื้อหาหลัก (Main) กว้างสุด */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* สำหรับการแสดงไอคอนเกม */
+#game-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-icon {
+    width: 40px;  /* ลดขนาดไอคอน */
+    height: 50px; /* ลดขนาดไอคอน */
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.game-icon:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* สำหรับขนาดหน้าจอเล็ก (มือถือ) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .game-icon {
+        width: 45px; /* ลดขนาดไอคอนเมื่อหน้าจอเล็กลง */
+        height: 45px;
+    }
+}
