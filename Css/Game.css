@@ -84,9 +84,10 @@ main {
     flex-wrap: wrap;
 }
 
+/* ปรับขนาดไอคอนเกมทั้งหมดให้ใหญ่ขึ้น */
 .game-icon {
-    width: 80px;
-    height: 80px;
+    width: 120px; /* เพิ่มขนาดไอคอน */
+    height: 120px;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -168,10 +169,11 @@ footer {
     }
 
     .game-icon {
-        width: 60px; /* ลดขนาดไอคอนเมื่อหน้าจอเล็กลง */
-        height: 60px;
+        width: 90px; /* ปรับขนาดเมื่อหน้าจอเล็กลง */
+        height: 90px;
     }
 }
+
 /* เพิ่มขนาดโลโก้ในปุ่มธีม */
 #theme-toggle img {
     width: 50px;  /* เพิ่มขนาดโลโก้ */
