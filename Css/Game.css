@@ -1,11 +1,31 @@
 /* ตั้งค่าเริ่มต้น */
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+    background: url('https://images6.alphacoders.com/137/thumb-1920-1371030.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 100vh; /* ทำให้พื้นหลังครอบคลุมทั้งหน้า */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ปุ่มเปลี่ยนพื้นหลัง */
+#toggle-bg {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#toggle-bg:hover {
+    background: #666;
 }
 
 header {
@@ -13,7 +33,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: lightgray;
+    background-color: rgba(169, 169, 169, 0.7); /* พื้นหลังโปร่งแสง */
 }
 
 h1 {
@@ -40,8 +60,10 @@ button {
 
 /* ทำให้เนื้อหาหลัก (Main) กว้างสุด */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
 }
 
@@ -51,6 +73,7 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .icon-container {
@@ -62,8 +85,8 @@ main {
 }
 
 .game-icon {
-    width: 40px;  /* ลดขนาดไอคอน */
-    height: 50px; /* ลดขนาดไอคอน */
+    width: 80px;
+    height: 80px;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -76,6 +99,61 @@ main {
 footer {
     text-align: center;
     margin-top: 20px;
+    position: relative;
+}
+
+/* กำหนดขนาดของรถ */
+#car-race {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    animation: carRaceRandom 5s linear infinite; /* แอนิเมชันการเคลื่อนไหวแบบสุ่ม */
+}
+
+#car-icon {
+    width: 100%;
+    height: auto;
+}
+
+/* แอนิเมชันการเคลื่อนที่แบบสุ่ม */
+@keyframes carRaceRandom {
+    0% { top: 10%; left: 10%; }
+    25% { top: 50%; left: 30%; }
+    50% { top: 70%; left: 70%; }
+    75% { top: 40%; left: 90%; }
+    100% { top: 20%; left: 50%; }
+}
+
+/* แถบความเร็ว */
+#speed-bar-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+#speed-bar {
+    width: 200px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#speed-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #4caf50;
 }
 
 /* สำหรับขนาดหน้าจอเล็ก (มือถือ) */
@@ -90,7 +168,19 @@ footer {
     }
 
     .game-icon {
-        width: 45px; /* ลดขนาดไอคอนเมื่อหน้าจอเล็กลง */
-        height: 45px;
+        width: 60px; /* ลดขนาดไอคอนเมื่อหน้าจอเล็กลง */
+        height: 60px;
     }
+}
+/* เพิ่มขนาดโลโก้ในปุ่มธีม */
+#theme-toggle img {
+    width: 50px;  /* เพิ่มขนาดโลโก้ */
+    height: 50px;
+}
+
+/* จัดตำแหน่ง Choose a Game ไปมุมซ้าย */
+#game-icons h2 {
+    text-align: left; /* จัดข้อความไปทางซ้าย */
+    width: 100%;  /* ให้ข้อความชิดซ้ายของ container */
+    margin-left: 20px; /* ขยับออกจากขอบ */
 }
