@@ -4,11 +4,13 @@ const playPauseBtn = document.getElementById('play-pause-btn');
 const stopBtn = document.getElementById('stop-btn');
 const playIcon = document.getElementById('play-icon');
 const stopIcon = document.getElementById('stop-icon');
+const fileInput = document.getElementById('file-input');  // Input สำหรับเลือกไฟล์เพลง
+const songName = document.getElementById('song-name'); // แสดงชื่อเพลง
 
 // ฟังก์ชันเริ่มเล่นเพลง
 function playMusic() {
     audio.play();
-    playIcon.src = "https://cdn-icons-png.flaticon.com/512/1160/1160184.png"; // เปลี่ยนเป็นไอคอน play
+    playIcon.src = "https://cdn-icons-png.flaticon.com/512/1160/1160184.png"; // ไอคอน play
     stopIcon.src = "https://cdn-icons-png.flaticon.com/512/684/684809.png"; // ไอคอนหยุด
 }
 
@@ -41,15 +43,23 @@ audio.onplay = () => {
 audio.onpause = () => {
     playIcon.src = "https://cdn-icons-png.flaticon.com/512/1160/1160184.png"; // ไอคอน play
 };
-// หา element ที่เกี่ยวข้อง
-const waveform = document.querySelectorAll('.wave');
-const audio = document.getElementById('audio');
 
-// ฟังก์ชันที่จะอัพเดตคลื่นเสียง
+// เมื่อเลือกไฟล์เพลงใหม่จาก input
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const audioURL = URL.createObjectURL(file);
+        audio.src = audioURL; // เปลี่ยน src ของเพลง
+        songName.textContent = `🎵 ${file.name}`; // อัปเดตชื่อเพลง
+        playMusic(); // เริ่มเล่นเพลงใหม่
+    }
+});
+
+// ฟังก์ชันอัพเดตคลื่นเสียง
+const waveform = document.querySelectorAll('.wave');
 function updateWaveform() {
     const volume = audio.volume; // ใช้ระดับเสียงของเพลง
-    waveform.forEach((wave, index) => {
-        // ปรับความสูงของคลื่นเสียงตามระดับเสียง
+    waveform.forEach((wave) => {
         const height = Math.random() * (volume * 100);
         wave.style.height = `${height}px`;
     });
