@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="/Css/AboutMe.css">
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <marquee behavior="scroll" direction="left">
+                <a href="index.html">HomePage</a> | 
+                <a href="Game.html">Games</a> | 
+                <a href="AboutMe.html">About Me</a>
+            </marquee>
+        </nav>
+        <button id="theme-toggle">
+            <img src="../images/dark-mode-icon.png" alt="Dark Mode" width="30px" style="border-radius: 50%;">
+        </button>
+    </header>
+
+    <main>
+        <section id="about-me">
+            <img id="profile-pic" src="/3f6d382b-7b02-46d7-af3e-0f95f50120d9.jpg" alt="My Profile Picture">  
+            <p class="info"><strong>ชื่อ:</strong> นายอธิป นกอยู่</p>
+            <p class="info"><strong>คณะ:</strong> ครุศาสตร์อุตสาหกรรมเทคโนโลยี</p>
+            <p class="info"><strong>สาขา:</strong> ครุศาสตร์วิศวกรรม</p>
+            <p class="info"><strong>เกิดวันที่:</strong> 10 ตุลาคม พ.ศ. 2546</p>
+            <p class="info"><strong>Facebook:</strong> <a href="https://www.facebook.com/Fulk2014" target="_blank">Fulk2014</a></p>
+            <p class="info"><strong>งานอดิเรก:</strong> ฟังเพลง</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by อธิป นกอยู่ 65030275</p>
+    </footer>
+
+    <!-- 🎵 แถบควบคุมเพลง -->
+    <div id="music-player">
+        <button id="play-pause-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/1160/1160184.png" alt="Play" id="play-icon" width="30px">
+        </button>
+        <button id="stop-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" alt="Stop" id="stop-icon" width="30px">
+        </button>
+        <span id="song-name">🎵 Travis Scott Type Beat</span>
+        <audio id="audio" src="/travis-scott-don-toliver-playboi-carti-trap-type-beat-by-tremoxbeatz-201483.mp3" autoplay></audio>
+    </div>
+
+    <!-- คลื่นเสียงในพื้นหลัง -->
+    <div id="background-waveform">
+        <!-- คลื่นเสียงจะถูกสร้างที่นี่ -->
+    </div>
+
+    <script src="/JS/AboutMe.js"></script>
+</body>
+</html>
+<div id="background-waveform">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+

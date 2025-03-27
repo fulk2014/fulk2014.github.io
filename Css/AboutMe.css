@@ -1,0 +1,176 @@
+/* 🎨 BG อนิเมชั่น */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+    background-size: 400% 400%;
+    animation: bg-animation 10s ease infinite;
+    transition: background 0.5s ease-in-out;
+}
+
+@keyframes bg-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🎵 แถบควบคุมเพลง */
+#music-player {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 320px;
+    justify-content: space-between;
+}
+
+/* 🎶 คลื่นเสียง */
+#waveform {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 4px;
+}
+
+.bar {
+    width: 5px;
+    height: 10px;
+    background: #ffffff;
+    animation: wave 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+.bar:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+    0% { height: 10px; }
+    50% { height: 20px; }
+    100% { height: 10px; }
+}
+
+/* 🏆 ทำให้ Header คงอยู่ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+/* ทำให้ข้อมูลอยู่กลางหน้าจอ */
+#about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* ให้เต็มจอ */
+}
+
+/* ปรับขนาดรูปโปรไฟล์ให้เหมาะสม */
+#profile-pic {
+    width: 180px; /* ปรับขนาดให้พอดี */
+    height: 180px;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #fff; /* เพิ่มขอบให้ดูสวย */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+
+/* จัดข้อความให้มีขนาดและระยะห่างเท่ากัน */
+.info {
+    font-size: 20px; /* ขนาดตัวอักษร */
+    font-weight: bold;
+    width: 300px; /* กำหนดความกว้างให้เท่ากัน */
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc; /* เส้นคั่นข้อความ */
+}
+/* สไตล์พื้นหลังของคลื่นเสียง */
+#background-waveform {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);  /* เพิ่มพื้นหลังที่ทึบเล็กน้อย */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: -1;  /* ให้คลื่นเสียงอยู่ข้างหลังเนื้อหาทั้งหมด */
+}
+
+.bar {
+    width: 5px;
+    margin: 0 2px;
+    background-color: rgba(0, 255, 0, 0.7); /* สีของคลื่นเสียง */
+    animation: wave-animation 0.5s ease-in-out infinite;
+    transform-origin: bottom;
+}
+
+/* การเคลื่อนไหวของคลื่นเสียง */
+@keyframes wave-animation {
+    0% {
+        transform: scaleY(0.5);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+    100% {
+        transform: scaleY(0.5);
+    }
+}
+#background-waveform {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1; /* อยู่ในพื้นหลัง */
+}
+
+.wave {
+    width: 10px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0 5px;
+    animation: wave 0.6s ease-in-out infinite;
+}
+
+.wave:nth-child(odd) {
+    animation-duration: 0.8s;
+    animation-delay: 0.2s;
+}
+
+.wave:nth-child(even) {
+    animation-duration: 0.7s;
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    0% {
+        height: 30px;
+    }
+    50% {
+        height: 80px;
+    }
+    100% {
+        height: 30px;
+    }
+}
